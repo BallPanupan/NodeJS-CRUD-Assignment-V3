@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload File </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+	</style>
+
+  </head>
+  <body background="http://www.siamgranite.com/images/1142843379/1188898150.jpg">
+	<br/>
+
+      <div class="container">
+          <div class="page-header">
+              <h1><center>อยากซื้อ อยากขาย</center></h1>
+              <hr>
+          </div>
+          <center><p><a class="btn btn-outline-primary btn-lg" href="/sell" >อยากขาย</a></p></center>
+          <div class="row">
+            <div class="col">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1">
+
+            </div>
+
+
+            <div class="col-sm-2">
+
+            </div>
+
+
+            <div class="col-sm-8">
+
+              <div class="row">
+                <table class = "table">
+                <thead class = "thead-inverse">
+                	<tr>
+                    <th>#</th>
+                      <th>รูป</th>
+                      <th>ประเภท</th>
+                      <th>ชื่อสินค้า</th>
+                      <th>รายละเอียด</th>
+                      <th>ราคา</th>
+                      <th>แสดง</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <% for(var i = 0; i < data.length; ++i) {%>
+                      <th><%=i+1%></th>
+                      <td><img src="uploads/<%= data[i].img1 %>" style="width:45px; height:60px;" ></td>
+                      <td><%=data[i].categoryX%></td>
+                      <td><%=data[i].Product_name%></td>
+                      <td><%=data[i].Details%></td>
+                      <td><%=data[i].Pricex%></td>
+                      <td><a class="btn btn-outline-info" href="/view/<%=data[i]._id%>" target="_blank">แสดง</a></td>
+                    </td>
+                  </tr>
+                <% } %>
+                  </table>
+              </div>
+
+            </div>
+            <div class="col-sm-1">
+
+            </div>
+          </div>
+        </div>
+<br/><br/><br/><br/><br/>
+
+
+
+    <script src="/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+    <nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">อยากซื้อ อยากขาย</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="btn btn-outline-primary btn-lg" href="/sell" >อยากขาย</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload File </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body background="http://www.siamgranite.com/images/1142843379/1188898150.jpg">
+
+    <p></p>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-1">
+              <a class="btn btn-outline-primary btn-lg" href="/" >หน้าหลัก</a>
+            </div>
+
+            <div class="col-sm-10">
+              <center><h3>View</h3></center>
+
+            </div>
+
+            <div class="col-sm-1">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-2">
+            </div>
+
+            <div class="col-sm-9">
+
+
+
+                            <table border="0">
+                              <tr>
+                                <td>ประเเภท</td>
+                                <td><%= data.categoryX%></td>
+                              </tr>
+
+                              <tr>
+                                <td>ชื่อสินค้า</td>
+                                <td><%= data.Product_name %></td>
+                              </tr>
+                              <tr>
+                                <td>ราคา</td>
+                                <td><%= data.Pricex %></td>
+                              </tr>
+                              <tr>
+                                <td>รายละเอียด</td>
+                                <td><%= data.Details %></td>
+                              </tr>
+                              <tr>
+                                <td>สถนาที่</td>
+                                <td><%= data.Locationx %></td>
+                              </tr>
+                              <tr>
+                                <td>เบอร์โทรศัพท์</td>
+                                <td><%= data.Phone_number %></td>
+                              </tr>
+                            </table>
+
+              			            <img src="../uploads/<%= data.img1 %>" style="width:90%;" >
+                                <img src="../uploads/<%= data.img2 %>" style="width:90%;" >
+                                <img src="../uploads/<%= data.img3 %>" style="width:90%;" >
+                                <img src="../uploads/<%= data.img4 %>" style="width:90%;" >
+                                <img src="../uploads/<%= data.img5 %>" style="width:90%;" >
+
+
+
+            </div>
+
+            <div class="col-sm-1">
+            </div>
+
+          </div>
+        </div>
+	<hr>
+		  <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+            </div>
+
+            <div class="col-sm-6">
+
+              <table class = "table">
+              <thead class = "thead-inverse">
+                </thead>
+                <tbody>
+                  <%
+                  for(var i=0;i<data2.length;i++){
+                    no=i+1;
+                    name_comment=data2[i].name_comment;
+                    email_comment=data2[i].email_comment;
+                    text_comment=data2[i].text_comment;
+                    %>
+
+                    <table>
+                      <tr>
+                      	<td><span class="badge badge-primary"><%=no%></span></td>
+                        <td>ชื่อ :</td>
+                        <td><%=name_comment%></td>
+                      </tr>
+
+                      <tr>
+                      	<td></td>
+                        <td>Email :</td>
+                        <td><%=email_comment%></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>ข้อความ :</td>
+                        <td><%=text_comment%></td>
+                      </tr>
+                    </table>
+                    <p></p>
+                    <p></p>
+                    <hr>
+
+                    <%}%>
+                  </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-sm-3">
+            </div>
+
+          </div>
+        </div>
+	<hr>
+<p></p>
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-3">
+            </div>
+
+            <div class="col-sm-6">
+
+			<h3>Comment</h3>
+
+        			<form method="post" action="../comment_insert/<%= data._id %>">
+
+                <div class="form-group">
+                  <label for="category">ชื่อ</label>
+                  <input type="text" class="form-control" name="name_comment" placeholder="ชื่อ">
+                </div>
+
+                <div class="form-group">
+                  <label for="Product_name">Email</label>
+                  <input type="email" class="form-control" name="email_comment" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                  <label for="Pricex">ข้อความ</label>
+                  <textarea type="text" class="form-control" name="text_comment" rows="3" placeholder="ข้อความ"></textarea>
+                </div>
+
+
+                <center>
+                  <input type="hidden" name="comment_in_product" value="<%= data._id %>"/>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                </center>
+                <p> </p>
+              </form>
+
+            </div>
+
+            <div class="col-sm-3">
+
+            </div>
+
+          </div>
+        </div>
+
+
+    <script src="/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
