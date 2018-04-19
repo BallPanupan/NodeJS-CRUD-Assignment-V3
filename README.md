@@ -18,7 +18,7 @@ P.S.
 #local User
 
 
-1.http://localhost:3000/
+1.http://localhost:3000/ //index Page
 
 
 2.http://localhost:3000/sell // for sell item
